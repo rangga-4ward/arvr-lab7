@@ -1,0 +1,21 @@
+{
+  "name": "arvr-lab7",
+  "version": "1.0.0",
+  "description": "",
+  "private":"true",
+  "type":"module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.11"
+  }
+}

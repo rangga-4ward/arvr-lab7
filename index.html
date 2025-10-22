@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>AR Ruler</title>
+    <style>
+      html, body { margin:0; height:100%; background:#000; }
+      #app { position:fixed; inset:0; }
+      .top { position:fixed; top:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,.45); padding:8px 12px; border-radius:10px; font:12px system-ui; }
+      .hud { position:fixed; left:10px; right:10px; bottom:10px; display:flex; gap:10px; flex-wrap:wrap; font:13px system-ui; color:#fff; pointer-events:none; }
+      .card { pointer-events:auto; background:rgba(0,0,0,.55); padding:10px 12px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+      .row { display:flex; align-items:center; gap:10px; margin:6px 0; }
+      .pill { background:rgba(0,0,0,.45); padding:6px 10px; border-radius:999px; }
+      button { all:unset; background:#1a2533; color:#fff; padding:8px 12px; border-radius:10px; cursor:pointer; border:1px solid rgba(255,255,255,.08); }
+      button:hover { background:#223041; }
+      label { user-select:none; }
+    </style>
+  </head>
+  <body>
+    <div class="top" id="hint">Tap pertama = Titik A. Tap kedua = Titik B. Cubit/putar layar untuk zoom/rotate kamera (mode fallback).</div>
+    <div id="app"></div>
+
+    <div class="hud">
+      <div class="card">
+        <div class="row"><span class="pill" id="status">Menunggu kamera...</span></div>
+        <div class="row"><span>🔹 Jarak:</span> <span class="pill" id="dist">0.00 m (0 cm)</span></div>
+        <div class="row"><span>Σ Total:</span> <span class="pill" id="total">0.00 m</span></div>
+        <div class="row">
+          <label><input id="chain" type="checkbox" /> Chain Mode</label>
+          <button id="btn-undo">Undo</button>
+          <button id="btn-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
